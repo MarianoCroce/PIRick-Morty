@@ -9,8 +9,10 @@ function Detail() {
 
   const [character, setCharacter] = useState({});
   
+  //`http://rym2-production.up.railway.app/api/character/${id}?key=henrym-marianocroce`
+
   useEffect(() => {
-    axios(`http://rym2-production.up.railway.app/api/character/${id}?key=henrym-marianocroce`).then(({ data }) => {
+    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
        if (data.name) {
           setCharacter(data);
        } else {
@@ -44,12 +46,12 @@ function Detail() {
 
       <div>
       <h3>Origin:</h3>
-      <p>{character.origin?.name}</p>
+      <p>{character.origin}</p>
       </div>
 
       <div>
       <h3>Location:</h3>
-      <p>{character.location?.name}</p>
+      <p>{character.location}</p>
       </div>
 
     </div>
